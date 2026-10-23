@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>SSAFY 학습 기록</title>
-</head>
-<body>
-    <h1>{{ name }}의 SSAFY 학습 기록<h1>
+{% extends "articles/base.html" %}
+
+{% block content %}
+    <h2>{{ name }}의 SSAFY 학습 기록</h2>
     <p>오늘 배우는 주제는  {{ topic }}입니다.</p>
     <p>{{ study_day }}일차 학습 중입니다.</p>
-</body>
-</html>
+
+    {% if topics %}
+    <ul>
+        {% for subject in topics %}
+            <li>{{ subject }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>아직 등록한 학습 주제가 없습니다.</p>
+    {% endif %}
+{% endblock content %}

@@ -19,6 +19,10 @@ from django.urls import path
 from articles import views
 
 urlpatterns = [
+    path('study_time/', views.study_time),
+    path('study_catch/', views.study_catch),
+    path('throw/', views.throw),
+    path('catch/', views.catch),
     path('admin/', admin.site.urls),
     path('articles/', views.index),
     path('hello/', views.hello),
